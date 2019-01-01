@@ -1,5 +1,5 @@
 # MAIS-202
-This repository contain my solution to the application code challenge for MAIS 202: Accelerated Introduction to Machine Learning.
+This repository is created for the application coding challenge for MAIS 202: Accelerated Introduction to Machine Learning.
 
 Please run coding_challenge.py to see my solution.
 
