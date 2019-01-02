@@ -30,17 +30,18 @@ purposes = list(sorted(set(x[0] for x in arr)))     # Store purposes in a list a
 n = len(purposes)
 sum_int_rates = [0 for _ in range(n)]
 num_loans = [0 for _ in range(n)]
-
-for i in range(line_count - 1):
-    for j in range(n):                      # Loop through the purpose of each line and all purposes
-        if arr[i][0] == purposes[j]:        # for matching purposes
+for i in range(line_count - 1):             # Loop through the purpose of each line
+    for j in range(n):                      # and all purposes
+        if arr[i][0] == purposes[j]:        # For matching purposes
             sum_int_rates[j] += arr[i][1]   # update the sum of interest rates for the specific purpose
             num_loans[j] += 1               # and update the number of loans for the specific purpose
-
+# Testing code
+# print(sum_int_rates)
+# print(num_loans)
 avg_int_rates = [sum_int_rates[i] / num_loans[i] for i in range(n)]
 
 # Print out the results in tabular format
-results = [[purposes[i], f'{avg_int_rates[i]:6.3f}%'] for i in range(n)]
+results = [[purposes[i], f'{avg_int_rates[i]:6.3f}%'] for i in range(n)]    # Make a nested list for tabulate()
 print(tabulate(results, headers=['Purpose', 'Average Interest Rate'], tablefmt='presto'))
 
 # Plot the bar chart
